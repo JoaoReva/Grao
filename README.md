@@ -1,4 +1,4 @@
-##Proposta
+## Proposta
 João está começando a investir e semanalmente, ele vai investir com a Grão R$ 100,00 e queremos mostrar para João quanto ele terá poupado e quanto o seu dinheiro terá rendido daqui 36 semanas. 
 Para isso temos algumas regras:
  * Consideramos que a Taxa Selic seja de 4,25% ao ano
@@ -26,17 +26,17 @@ Pode utilizar qualquer linguagem de programação, porém, temos preferência pe
  * Prazo de 1  a 2 dias corridos.
  * Entregar um repositório público (Github, Gitlab ou Bitbucket)
 
-##Requisitos
+## Requisitos
  * Maven 3
  * Java 1.8
 
-##Build
+## Build
  * Rodar **buildJar.bat**, será gerado o **.jar** em **target\rest-service-0.0.1-SNAPSHOT.jar**
 
-##Iniciar serviço
+## Iniciar serviço
  * Rodar **startServer.bat** será iniciado o servidor na porta 8080
 
-##Como usar
+## Como usar
  * Rodar o **buildJar.bat**
  * Rodar o **startServer.bat**
  * Realizar um requisição **post** para a url http://localhost:8080/Investment/Simulation
