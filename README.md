@@ -43,20 +43,20 @@ Pode utilizar qualquer linguagem de programação, porém, temos preferência pe
  * Dados da requisição: 
 ``` 
 {
-	//Valor inicial - Obrigatório
+    //Valor inicial - Obrigatório
     "initialValue": number double (100.0), 
 	
-	//Data inicial se não preenchido ele considera a data de hoje
+    //Data inicial se não preenchido ele considera a data de hoje
     "startDate": date ("2021-06-30"),
 	
-	//Data final - Obrigatório
+    //Data final - Obrigatório
     "endDate": date (2021-06-30)
 }
 ```
  * Retorno:
 ``` 
 {
-	//Valor total investido mais juros recebidos no período
+    //Valor total investido mais juros recebidos no período
     "totalValueOnFinalDate": number double (100.0)
 }
 ```

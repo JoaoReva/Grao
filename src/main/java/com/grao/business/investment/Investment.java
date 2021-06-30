@@ -14,7 +14,11 @@ public class Investment{
 	public double SimulateValue(PostInvestmentReturnSimulationRequestDTO param){
 		InvestmentInterface investment = new GovernmentBonds(interestRate);
 		
-		return investment.GetSimulFinalValue(param.getInitialValue(),param.getEndDate(),param.getStartDate());
+		if(param.getStartDate() != null){
+			return investment.GetSimulFinalValue(param.getInitialValue(),param.getEndDate(),param.getStartDate());
+		}else{
+			return investment.GetSimulFinalValue(param.getInitialValue(),param.getEndDate());
+		}
 	}
 	
 }

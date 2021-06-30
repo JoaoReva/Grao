@@ -107,8 +107,7 @@ public class InvestmentControllerTests {
 					          .content("{\"startDate\": \"2021-06-29\",\"endDate\": \"2021-01-01\",\"initialValue\": 100.0}"))
 		.andDo(print())
 		.andExpect(status().isBadRequest())
-		.andExpect(jsonPath("$", hasSize(1)))
-		/*.andExpect(jsonPath("$.[0].fieldName",is("endDate")))*/;
+		.andExpect(jsonPath("$.messageError", containsString("Data final nao pode ser menor ou igual que a data inicial")));
 	}
 	
 	@Test
@@ -118,8 +117,7 @@ public class InvestmentControllerTests {
 					          .content("{\"startDate\": \"2021-06-29\",\"endDate\": \"2021-06-29\",\"initialValue\": 100.0}"))
 		.andDo(print())
 		.andExpect(status().isBadRequest())
-		.andExpect(jsonPath("$", hasSize(1)))
-		/*.andExpect(jsonPath("$.[0].fieldName",is("endDate")))*/;
+		.andExpect(jsonPath("$.messageError", containsString("Data final nao pode ser menor ou igual que a data inicial")));
 	}
 	
 	@Test

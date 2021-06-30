@@ -36,8 +36,5 @@ public class ErrorResponseDTO{
 	}
 	
 	public ErrorResponseDTO() {
-		this.fieldName = fieldName;
-		this.rejectedValue = rejectedValue;
-		this.messageError = messageError;
 	}
 }
