@@ -1,18 +1,19 @@
 package com.grao.data.response;
 
+import java.math.BigDecimal;
 import com.grao.data.request.PostInvestmentReturnSimulationRequestDTO;
 
 public class PostInvestmentReturnSimulationResponseDTO{
 	
 	private PostInvestmentReturnSimulationRequestDTO simulationParms;
-	private double totalValueOnFinalDate;
+	private BigDecimal totalValueOnFinalDate;
 	
 	public PostInvestmentReturnSimulationResponseDTO(double totalValueOnFinalDate,PostInvestmentReturnSimulationRequestDTO simulationParms) {
-		this.totalValueOnFinalDate = totalValueOnFinalDate;
+		this.totalValueOnFinalDate = new BigDecimal(totalValueOnFinalDate).setScale(2, BigDecimal.ROUND_HALF_UP);
 		this.simulationParms = simulationParms;
 	}
 
-	public double getTotalValueOnFinalDate() {
+	public BigDecimal getTotalValueOnFinalDate() {
 		return totalValueOnFinalDate;
 	}
 	

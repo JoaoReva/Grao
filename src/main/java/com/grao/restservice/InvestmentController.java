@@ -7,12 +7,14 @@ import org.springframework.web.bind.annotation.RestController;
 import com.grao.data.request.PostInvestmentReturnSimulationRequestDTO;
 import com.grao.data.response.PostInvestmentReturnSimulationResponseDTO;
 import com.grao.business.investment.Investment;
+import javax.validation.Valid;
+import org.springframework.validation.BindingResult;
 
 /**
  * Controller for investment
  */
 @RestController
-public class InvestmentController {
+public class InvestmentController extends BasicController {
 		
 	/**
 	 * Api /Investment/Simulation
@@ -22,7 +24,7 @@ public class InvestmentController {
 	 *         		SimulationParms: paramsUsedInSimulation
 	 */
 	@PostMapping(value = "/Investment/Simulation")
-	public PostInvestmentReturnSimulationResponseDTO InvestmentSimulation(@RequestBody PostInvestmentReturnSimulationRequestDTO params) {
+	public PostInvestmentReturnSimulationResponseDTO InvestmentSimulation(@Valid @RequestBody PostInvestmentReturnSimulationRequestDTO params) {		
 		return new PostInvestmentReturnSimulationResponseDTO(new Investment().SimulateValue(params),params);
 	}
 }

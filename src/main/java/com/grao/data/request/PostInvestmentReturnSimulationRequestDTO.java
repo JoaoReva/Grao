@@ -1,11 +1,18 @@
 package com.grao.data.request;
 
 import java.time.LocalDate;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 public class PostInvestmentReturnSimulationRequestDTO{
 	
 	private LocalDate startDate;
+	
+	@NotNull
 	private LocalDate endDate;
+	
+	@NotNull
+	@Min(1)
 	private double initialValue;
 	
 	public void setStartDate(LocalDate startDate) {
