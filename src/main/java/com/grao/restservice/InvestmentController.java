@@ -25,6 +25,6 @@ public class InvestmentController extends BasicController {
 	 */
 	@PostMapping(value = "/Investment/Simulation")
 	public PostInvestmentReturnSimulationResponseDTO InvestmentSimulation(@Valid @RequestBody PostInvestmentReturnSimulationRequestDTO params) {		
-		return new PostInvestmentReturnSimulationResponseDTO(new Investment().SimulateValue(params),params);
+		return new PostInvestmentReturnSimulationResponseDTO(new Investment().SimulateValue(params));
 	}
 }
